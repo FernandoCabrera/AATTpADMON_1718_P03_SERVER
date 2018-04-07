@@ -17,8 +17,8 @@
                 
                 <form role="form" method="post" action="register">
                     <div class="form-group">
-                      <label for="username">Usuario</label>
-                      <input type="username" class="form-control" name="user" 
+                      <label for="Username">Usuario</label>
+                      <input type="Username" class="form-control" name="user" 
                              placeholder="Username">
                     </div>
                     

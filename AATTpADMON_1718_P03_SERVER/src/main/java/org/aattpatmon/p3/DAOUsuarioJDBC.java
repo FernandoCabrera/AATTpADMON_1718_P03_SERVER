@@ -3,9 +3,6 @@ package org.aattpatmon.p3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
 
@@ -27,7 +24,7 @@ public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 	
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource; //Opcional
+		//this.dataSource = dataSource; //Opcional
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		}
 	

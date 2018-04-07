@@ -8,7 +8,8 @@ import org.springframework.jdbc.core.RowMapper;
 
 //Es una clase en el que el programador implementa qué ha de hacerse para 
 //cada iteración (fila), típicamente el mapeo al DTO
-public class Mapper implements RowMapper{
+
+public class Mapper implements RowMapper<Usuario>{
 //este mapeo sólo hace faltaimplementarlo una vez y los métodos
 //del DAO lo usan simplemente mediante una instancia de la clase
 	

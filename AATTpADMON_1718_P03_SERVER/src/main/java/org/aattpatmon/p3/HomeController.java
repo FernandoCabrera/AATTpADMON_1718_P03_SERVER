@@ -1,14 +1,10 @@
 package org.aattpatmon.p3;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,8 +34,7 @@ public class HomeController {
 	@RequestMapping(value = "/Servlet1", method = {RequestMethod.GET,RequestMethod.POST})
 	public @ResponseBody String Servlet1  (HttpServletRequest request, Model model) {
 		
-		 String userbbdd="";
-		 String nifbbdd=" ";
+		
 		 //Hay que comprobar si el usuario esta en bbdd
 		 
 		//URL 

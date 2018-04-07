@@ -24,8 +24,8 @@
 <th><c:out value="${list.apellido1}" /></th>
 <th><c:out value="${list.apellido2}" /></th>
 <th><c:out value="${list.nif}" /></th>
-</tr>
 </c:forEach>
+</tr>
 </table>
 
 </body>

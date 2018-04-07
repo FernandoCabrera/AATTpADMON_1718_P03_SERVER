@@ -1,6 +1,8 @@
 package org.aattpatmon.p3;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 	private String user;
 	private String nombre;
     private String apellido1;
@@ -15,9 +17,13 @@ public class Usuario {
         nif=ni;
     }
     
-    public Usuario() {
-		// TODO Auto-generated constructor stub
-	}
+    public Usuario(){
+    	user="";
+        nombre="";
+        apellido1="";
+        apellido2="";
+        nif="";
+    }
     
 
 	@Override
