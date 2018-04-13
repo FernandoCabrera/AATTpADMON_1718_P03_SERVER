@@ -24,7 +24,7 @@ public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 	
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
-		//this.dataSource = dataSource; //Opcional
+		this.dataSource = dataSource; //Opcional
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		}
 	

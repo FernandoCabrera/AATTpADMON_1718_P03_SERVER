@@ -1,35 +1,21 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-       
-        <title>Práctica 3</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="col-md-offset-3 col-md-6">
-                <h1>Formulario de registro </h1>
-                <hr /> 
-                
-                <form role="form" method="post" action="register">
-                    <div class="form-group">
-                      <label for="Username">Usuario</label>
-                      <input type="Username" class="form-control" name="user" 
-                             placeholder="Username">
-                    </div>
-                    
-                    <div class="form-group">
-                      <label for="password">Contraseña</label>
-                      <input type="password" class="form-control" name="pass" 
-                             placeholder="Contraseña">
-                    </div>
-                    <button type="submit" class="btn btn-success btn-block">Log In</button>
-                 </form>
-            </div>           
-        </div>    
-    </body>
+<head>
+<meta charset="ISO-8859-1">
+<title>Log in</title>
+</head>
+<body>
+
+<h1>Registro</h1>
+<form action="Servlet1" method="post">
+User:<br> <input type="text" name="user" required><br>
+Password:<br> <input type="password" name="pass" required><br>
+<input type="submit" value="Inicio" >
+
+</form>
+
+</body>
 </html>

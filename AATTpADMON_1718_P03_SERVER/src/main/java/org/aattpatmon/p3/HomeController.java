@@ -38,7 +38,7 @@ public class HomeController {
 		 //Hay que comprobar si el usuario esta en bbdd
 		 
 		//URL 
-		String url="home";
+		String url="usuarios";
 		
 		 //Variables donde vamos a guardar los atributos introducidos en la url
 		 String usu,pass;	
