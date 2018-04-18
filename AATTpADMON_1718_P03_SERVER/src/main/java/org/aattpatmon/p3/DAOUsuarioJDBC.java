@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 
 	private JdbcTemplate jdbcTemplate;
-	private DataSource dataSource; 
+	//private DataSource dataSource; 
 	
 	/*El template normalmente se usará dentro del DAO y hay que
 	configurarlo con un DataSource, que tendrá a su vez la configuración
@@ -24,7 +24,7 @@ public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 	
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource; //Opcional
+		//this.dataSource = dataSource; //Opcional
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		}
 	
@@ -46,15 +46,15 @@ public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 	//Devuelve el usuario buscado o null si no existe
 	//Usuario bbdd y nif bdd
 		
-	public boolean buscaUsuario(String user,String dni){ 
-		boolean resul;
-		String sql = "select * from usuarios where (Usuario = user and NIF=dni)";
+	public Usuario buscaUsuario(String user,String dni){ 
+		
+		String sql = "select * from usuarios where Usuario = ? and DNI=?";
 		Object[ ] parametros = {user,dni}; //Array de objetos
 		Mapper mapper = new Mapper();
 		List<Usuario> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);
-		if (usuarios.isEmpty()) resul=false;
-		else  usuarios.get(0);resul=true;
-		return resul;
+		if (usuarios.isEmpty()) return null;
+		else  return usuarios.get(0);
+		
 		}
 	
 	//Insertar usuarios

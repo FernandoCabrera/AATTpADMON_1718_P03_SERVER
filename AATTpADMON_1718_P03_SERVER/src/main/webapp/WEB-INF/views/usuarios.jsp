@@ -12,17 +12,11 @@
 <table>
 <tr>
   <th><strong>Usuario</strong></th>
-  <th><strong>Nombre</strong></th>
-  <th><strong>Apellido1</strong></th>
-   <th><strong>Apellido2</strong></th>
-  <th><strong>NIF</strong></th>
+  <th><strong>DNI</strong></th>
 </tr>
 <tr>
 <c:forEach items= "${lista}" var="list">
 <th><c:out value="${list.user}" /></th>
-<th><c:out value="${list.nombre}" /></th>
-<th><c:out value="${list.apellido1}" /></th>
-<th><c:out value="${list.apellido2}" /></th>
 <th><c:out value="${list.nif}" /></th>
 </c:forEach>
 </tr>
