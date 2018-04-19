@@ -48,7 +48,7 @@ public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 		
 	public Usuario buscaUsuario(String user,String dni){ 
 		
-		String sql = "select * from usuarios where Usuario = ? and DNI=?";
+		String sql = "select * from usuarios where Usuario = ? AND DNI=?";
 		Object[ ] parametros = {user,dni}; //Array de objetos
 		Mapper mapper = new Mapper();
 		List<Usuario> usuarios = this.jdbcTemplate.query(sql, parametros, mapper);

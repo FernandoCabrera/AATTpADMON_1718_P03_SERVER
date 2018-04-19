@@ -17,24 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class HomeController {
-	/*
-	 * Autentificacion cliente
-	 * public class Main {
-   public static void main(String[] args)
-     throws MalformedURLException, IOException {
-      URL url = new URL("https://lefunes.wordpress.com");
-      URLConnection con = url.openConnection();
- 
-      BufferedReader in = new BufferedReader(
-         new InputStreamReader(con.getInputStream()));
- 
-      String linea;
-      while ((linea = in.readLine()) != null) {
-         System.out.println(linea);
-      }
-   }
-}
-	 */
+	
 	
 	//Inyectará, como una instancia de dao, un bean de una clase que implemente el interfaz DAOUsuariosInterfaz
 		@Autowired
@@ -42,36 +25,41 @@ public class HomeController {
 	
 	//Anotación para asignar solicitudes web a métodos en clases de manejo de solicitudes con firmas de métodos flexibles.
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Locale locale,Model model) {
 		
 		return "home";
 	}
 	//Añadimos los servlets
 	
-	//Anotación para asignar solicitudes web a métodos en clases de manejo de solicitudes con firmas de métodos flexibles.
+	//Anotación para asignar solicitudes web a métodos en clases de manejo
+	//de solicitudes con firmas de métodos flexibles.
 	@RequestMapping(value = "/Servlet1", method = {RequestMethod.GET,RequestMethod.POST})
-	public @ResponseBody String Servlet1  (HttpServletRequest request, Model model) {
-		
+	public String Servlet1  (HttpServletRequest request, Model model) {
+		//Este servlet tendrá la función de autentificación con la BBDD
 		
 		 //Hay que comprobar si el usuario esta en bbdd
 		 //Variables donde vamos a guardar los atributos introducidos en la url
 		String usu,pass;	
 		 
 	     usu = request.getParameter("user");
-	     pass = request.getParameter("pass"); 	 
+	     pass = request.getParameter("pass"); 
+	     
+	     
 		//URL 
 		String url="";
 		
-		
+	
 	        
 	    //Creamos objeto   
-			DAOUsuarioJDBC jdbc =new DAOUsuarioJDBC();
+		DAOUsuarioJDBC jdbc =new DAOUsuarioJDBC();
 			
 			List <Usuario> lista = dao.muestraUser();
 			//comprobamos que  usuario y pass estan en el sistema
-	        if(jdbc.buscaUsuario(usu, pass) !=null ){
-	        	
-	       //si coincide usuario y password 
+	       if(jdbc.buscaUsuario(usu, pass) !=null ){
+	        	//if(usu.equals("fcabrerac")&& pass.equals("21025161X")) { 
+	        		// ejemplo
+	    	   
+	    	   	//si coincide usuario y password 
 	            //Muestro el jsp con la info de bddd
 	        	//Por tanto hay que recorrer la lista
 	        	
@@ -92,14 +80,14 @@ public class HomeController {
 	 }else{
 	        	//Caso que no coincidan volvemos a home jsp
 	        	
-			 url="home";
+			 url="registro";
 			
 		
 		}	
 	        	
 	        	 
 	        
-	        
+	        //Devolvemos la url
 	        return url;
 	        
 		

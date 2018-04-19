@@ -67,9 +67,7 @@
 					</div>
 
 					<div class="w-full text-center p-t-55">
-						<span class="txt2">
-							Not a member?
-						</span>
+						
 
 						<a href="#" class="txt2 bo1">
 							Sign up now
