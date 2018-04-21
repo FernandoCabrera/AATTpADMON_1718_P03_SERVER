@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 
 	private JdbcTemplate jdbcTemplate;
-	//private DataSource dataSource; 
+	private DataSource dataSource; 
 	
 	/*El template normalmente se usará dentro del DAO y hay que
 	configurarlo con un DataSource, que tendrá a su vez la configuración
@@ -24,7 +24,7 @@ public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 	
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
-		//this.dataSource = dataSource; //Opcional
+		this.dataSource = dataSource; //Opcional
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		}
 	
@@ -78,3 +78,4 @@ public class DAOUsuarioJDBC implements DAOUsuarioInterface {
 	
 	
 }
+
