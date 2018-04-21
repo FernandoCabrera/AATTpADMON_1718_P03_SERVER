@@ -28,7 +28,7 @@ public class HomeController {
 		
 	
 	//Anotación para asignar solicitudes web a métodos en clases de manejo de solicitudes con firmas de métodos flexibles.
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = {RequestMethod.GET,RequestMethod.POST})
 	public String home(Locale locale,Model model) {
 		
 		return "home";
