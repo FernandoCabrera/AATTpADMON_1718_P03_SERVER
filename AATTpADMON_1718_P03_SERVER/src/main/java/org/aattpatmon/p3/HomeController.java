@@ -50,6 +50,7 @@ public class HomeController {
 		 
 	     usu = request.getParameter("user");
 	     pass = request.getParameter("pass"); 
+	     
 	     //URL 
 	     String url="";
 			
@@ -96,7 +97,8 @@ public class HomeController {
 		 
 	    usu = request.getParameter("user");
 	    dni = request.getParameter("pass"); 
-
+	    System.out.println(usu+" "+ dni);
+	    
 		//Si no manda usuario y dni
 		if(usu==null || dni==null){
 			
@@ -119,31 +121,16 @@ public class HomeController {
 				response="Usuario y dni autenticados con exito";//Mensage
 	        	url="Autentication";//Nos vamos al jsp Autentication
 	        			
-	 }else{
+			}else{
 	        	//Caso que no coincidan 
 
-		respuestaServidor="400 BAD REQUEST"; //solicitud incorrecta
-		model.addAttribute("respuestaServidor",respuestaServidor); //Enviamos la respuesta al jsp.
-		response="Usuario y dni no registrados en BBDD ";//Mensage
-     	url="Autentication";//Nos vamos al jsp Autentication
-			
-		
-		}	
-			
-	    	
-	      
-		
-	
-}
+				respuestaServidor="400 BAD REQUEST"; //solicitud incorrecta
+				model.addAttribute("respuestaServidor",respuestaServidor); //Enviamos la respuesta al jsp.
+				response="Usuario y dni no registrados en BBDD ";//Mensage
+		     	url="Autentication";//Nos vamos al jsp Autentication	
+			}	 	
+		}
 		logger.info(response+" Respuesta "+respuestaServidor); //Informamos del suceso.
 		return url;
-			
-		
-		
-		
-    	
-	
 	}
-	
-
 }
